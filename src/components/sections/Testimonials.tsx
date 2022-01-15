@@ -50,12 +50,14 @@ function Testimonials() {
   return (
 
     <Flex
-      direction={["column", "row"]}
+      direction={{ base: "column", xl: "row"}}
       w={"100%"}
+      maxW="container.lg"
       justifyContent={"center"}
       alignItems={"flex-start"}
       mt={16}
       mb={64}
+      mx={8}
     >
       <Flex alignItems={"center"} p={2} mr={8} mt={16}>
         <Icon as={FaCalendarCheck} w={24} h={24} color="neutral.500" opacity={"0.05"}/>
@@ -73,9 +75,8 @@ function Testimonials() {
         <Swiper
           centeredSlides={true}
           loop={true}
-          loopFillGroupWithBlank={true}
           spaceBetween={4}
-          slidesPerView={3}
+          slidesPerView={'auto'}
           slidesPerGroup={1}
           className="mySwiper">
 
@@ -84,13 +85,11 @@ function Testimonials() {
 
                     <Center>
                       <Box
-                        w={360}
                         h={480}
                         my={16}
                         bgImage={ item.url }
                         bgSize={"cover"}
                         bgRepeat={"no-repeat"}
-                        boxShadow={"dark-lg"}
                       >
                         <Flex
                           direction={"column"}
